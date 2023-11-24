@@ -1,10 +1,11 @@
 import { Model } from "mongoose";
 
-type IOrder = {
 
+
+type Order = {
         productName: string;
         price: number;
-        quantity: number;
+        quantity:number
 }
 
 export type Users = {
@@ -24,7 +25,7 @@ export type Users = {
                 city: string;
                 country: string
         };
-        orders?: IOrder[]
+        orders?: Order[]
         
 }
 
