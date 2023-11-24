@@ -174,7 +174,7 @@ const getTotalPrice = async (req: Request, res: Response) => {
         try {
                 const { userId } = req.params
                 const result = await userServices.getTotalPrice(userId)
-                console.log(result)
+     
                 res.status(200).json({
                         success: true,
                         message: 'Total price calculated successfully!',
