@@ -81,7 +81,7 @@ const updateUser = async (req: Request, res: Response) => {
                 const userData = req.body
 
                 const { userId } = req.params
-                
+
                 const result = await userServices.updateUser(userId, userData)
 
                 res.status(200).json({
@@ -90,6 +90,7 @@ const updateUser = async (req: Request, res: Response) => {
                         data: result
                 })
         } catch (error) {
+                
                 res.status(500).json({
                         success: false,
                         message: "User not found",
