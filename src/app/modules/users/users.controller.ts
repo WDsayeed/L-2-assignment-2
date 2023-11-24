@@ -62,7 +62,7 @@ const getSpecificUser = async (req: Request, res: Response) => {
                         data: result,
                 });
         } catch (error) {
-                
+
                 res.status(404).json({
                         success: false,
                         message: "User not found",
@@ -79,6 +79,7 @@ const getSpecificUser = async (req: Request, res: Response) => {
 const updateUser = async (req: Request, res: Response) => {
         try {
                 const userData = req.body
+
                 const { userId } = req.params
                 const result = await userServices.updateUser(userId, userData)
                 res.status(200).json({
