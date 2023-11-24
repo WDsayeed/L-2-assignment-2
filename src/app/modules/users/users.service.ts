@@ -37,16 +37,13 @@ const updateUser = async (userId: string, userData: Users) => {
                 new: true,
                 runValidators: true
         }).select('-password')
-        console.log(result)
 
         return result;
 }
 const updateOrderField = async (userId: string, userData: Users) => {
 
         const result = await UserModel.findOneAndUpdate({ userId }, userData, {
-                // $addtoset: userData,
-                new: true,
-                // runValidators:true
+                new: true,             
         })
         return result;
 
