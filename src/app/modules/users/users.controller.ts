@@ -194,7 +194,7 @@ const getTotalPrice = async (req: Request, res: Response) => {
         }
 }
 
-// const getTotalPrice = 
+
 
 export const UserControllers = {
         createUser,
