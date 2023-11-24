@@ -81,8 +81,9 @@ const updateUser = async (req: Request, res: Response) => {
                 const userData = req.body
 
                 const { userId } = req.params
-                const result = await userServices.updateUser(userId, userData)
                 
+                const result = await userServices.updateUser(userId, userData)
+
                 res.status(200).json({
                         success: true,
                         message: 'user updated succesfully',
