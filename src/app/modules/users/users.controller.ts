@@ -40,7 +40,14 @@ const getAllUser = async (req: Request, res: Response) => {
                 })
 
         } catch (error) {
-                console.log(error)
+                res.status(404).json({
+                        success: false,
+                        message: "User not found",
+                        error: {
+                                code: 404,
+                                description: "User not found!"
+                        }
+                });
         }
 }
 
