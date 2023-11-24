@@ -62,7 +62,6 @@ const getSpecificUser = async (req: Request, res: Response) => {
                         data: result,
                 });
         } catch (error) {
-
                 res.status(404).json({
                         success: false,
                         message: "User not found",
