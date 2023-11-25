@@ -26,6 +26,7 @@ export type Users = {
   orders?: Order[];
 };
 
+
 export interface UserStaticModel extends Model<Users> {
   isUserExists(userId: string): Promise<Users | null>;
 }

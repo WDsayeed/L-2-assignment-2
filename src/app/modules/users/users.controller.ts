@@ -1,8 +1,7 @@
 import { Request, Response } from 'express';
 import { userServices } from './users.service';
 import userValidationSchema from './users.validation';
-import userUpdateValidationSchema from './user.update.validation';
-import orderValidationSchema from './user.order.validation';
+
 
 const createUser = async (req: Request, res: Response) => {
   try {
@@ -70,11 +69,10 @@ const getSpecificUser = async (req: Request, res: Response) => {
 const updateUser = async (req: Request, res: Response) => {
   try {
     const userData = req.body;
-    const zodParseData = userUpdateValidationSchema.parse(userData)
-
+  
     const { userId } = req.params;
 
-    const result = await userServices.updateUser(userId, zodParseData);
+    const result = await userServices.updateUser(userId, userData);
 
     res.status(200).json({
       success: true,
@@ -94,11 +92,10 @@ const updateUser = async (req: Request, res: Response) => {
 };
 const updateOrderField = async (req: Request, res: Response) => {
   try {
-    const userData = req.body;
-    const zodParseData = orderValidationSchema.parse(userData)
+    const userData = req.body; 
     const { userId } = req.params;
 
-    const result = await userServices.updateOrderField(userId, zodParseData);
+    const result = await userServices.updateOrderField(userId, userData);
     res.status(200).json({
       success: true,
       message: 'order created succesfully!',

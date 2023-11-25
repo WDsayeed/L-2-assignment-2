@@ -2,7 +2,7 @@ import { Users } from './users.interface';
 import { UserModel } from './users.model';
 
 const createUserIntoDb = async (user: Users) => {
-  const result = await UserModel.create(user);
+  const result = (await UserModel.create(user));
   return result;
 };
 
